@@ -1,0 +1,222 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+  color: #e2e8f0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app-header p {
+  margin: 0;
+  max-width: 620px;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid.dashboard {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 18px 50px -25px rgba(15, 23, 42, 0.7);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.card-value {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 600;
+}
+
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.delta.positive {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+}
+
+.delta.negative {
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 220px;
+  padding: 0 0.5rem;
+}
+
+.chart-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bar-track {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  border-radius: 0.9rem;
+  background: rgba(148, 163, 184, 0.15);
+  overflow: hidden;
+}
+
+.bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+}
+
+.chart-label {
+  font-size: 0.75rem;
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 0 0 0.5rem;
+  font-weight: 500;
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.table tbody tr {
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.table tbody tr:first-child {
+  border-top: none;
+}
+
+.table tbody td {
+  padding: 0.75rem 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pill {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  background: rgba(15, 23, 42, 0.6);
+  color: rgba(226, 232, 240, 0.78);
+  cursor: pointer;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.pill.active {
+  border-color: rgba(56, 189, 248, 0.8);
+  background: rgba(56, 189, 248, 0.18);
+  color: #bae6fd;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: rgba(148, 163, 184, 0.65);
+  border: 1px dashed rgba(148, 163, 184, 0.2);
+  border-radius: 1rem;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .card {
+    padding: 1.3rem;
+  }
+}
